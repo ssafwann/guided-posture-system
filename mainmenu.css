@@ -1,0 +1,218 @@
+html,
+body {
+  margin: 10px; /*If this affect the style of your page, you can change it back*/
+  padding: 0;
+  background-color: #dce4ef;
+}
+
+canvas {
+  display: block;
+}
+/* CSS for main menu */
+.center {
+  display: flex;
+  justify-content: center;
+}
+.supp_button {
+  display: flex;
+  justify-content: end;
+  margin-top: 12px;
+}
+
+.supp_button_style {
+  cursor: pointer;
+  background-color: #b80000;
+  opacity: 44%;
+  border-radius: 50%;
+  width: 50px;
+  height: 51px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.supp_button_style:hover {
+  opacity: 80%;
+}
+
+#black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #494949;
+  z-index: 1001;
+  -moz-opacity: 0.3;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  z-index: 1;
+}
+
+.center_supp_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+  width: 100%;
+}
+
+.center_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -100px;
+}
+
+.message {
+  text-align: center;
+  color: #7c7c7c;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Button_Colour {
+  background-color: #b80000;
+  opacity: 44%;
+  border: 5px #d08884;
+  border-radius: 5px;
+  width: 320px;
+  cursor: pointer;
+}
+
+.Button_Colour:hover {
+  opacity: 80%;
+}
+
+.Main_Button {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 38px;
+  text-align: center;
+}
+
+/* CSS for popup form */
+#container {
+  display: none;
+  z-index: 3;
+  position: relative;
+}
+
+div#popupboxes {
+  position: absolute;
+  left: 50%;
+  /* top:17%; */
+  margin-top: -100px;
+  margin-left: -202px;
+}
+.back {
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.back:hover {
+  color: #000000;
+}
+.popup_container {
+  width: 350px;
+  padding: 10px 50px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px 0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #7c7c7c;
+}
+input[type="text"] {
+  width: 82%;
+  padding: 10px;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  padding-left: 40px;
+  font-size: 16px;
+}
+textarea {
+  background-repeat: no-repeat;
+  background-position: 5px 7px;
+  width: 82%;
+  height: 95px;
+  padding: 10px;
+  resize: none;
+  margin: 30px 0;
+  border: 1px solid #ccc;
+  padding-left: 40px;
+  font-size: 16px;
+}
+
+#submit {
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  display: block;
+  background-color: #d08884;
+  color: #fff;
+  border: 1px solid #d08884;
+  padding: 10px 0;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* End of CSS for popup form */
+
+/* CSS for popup setting */
+#setting {
+  display: none;
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  /* top:17%; */
+  margin-top: -100px;
+  margin-left: -202px;
+}
+
+.slidecontainer {
+  width: 350px;
+  padding: 10px 50px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 8px 0;
+  border-radius: 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-top: 30px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #d08884;
+  cursor: pointer;
+}
+/* End of CSS for setting */
+
+#infobox {
+  display: none;
+  z-index: 3;
+  position: relative;
+}
+.infoDetail {
+  max-width: 70;
+}
+/* End of CSS for main menu */

@@ -4,14 +4,148 @@
     <meta charset="UTF-8" />
     <title>Guided Posture Exercise System</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="mainmenu.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script>
+      function check_empty() {
+        if (
+          document.getElementById("name").value == "" ||
+          document.getElementById("email").value == "" ||
+          document.getElementById("msg").value == ""
+        ) {
+          alert("Fill All Fields !");
+        } else {
+          document.getElementById("form").submit();
+          alert("Form Submitted Successfully...");
+        }
+      }
+      //Function To Display Popup
+      function show_form() {
+        document.getElementById("container").style.display = "block";
+        document.getElementById("black_overlay").style.display = "block";
+      }
+      function show_setting() {
+        document.getElementById("setting").style.display = "block";
+        document.getElementById("black_overlay").style.display = "block";
+      }
+      function show_info() {
+        document.getElementById("infobox").style.display = "block";
+        document.getElementById("black_overlay").style.display = "block";
+      }
+
+      //Function to Hide Popup
+      function hide_form() {
+        document.getElementById("container").style.display = "none";
+        document.getElementById("black_overlay").style.display = "none";
+      }
+      function hide_setting() {
+        document.getElementById("setting").style.display = "none";
+        document.getElementById("black_overlay").style.display = "none";
+      }
+      function hide_info() {
+        document.getElementById("infobox").style.display = "none";
+        document.getElementById("black_overlay").style.display = "none";
+      }
+    </script>
   </head>
 
   <body>
-    <h1>PoseNet Example</h1>
-    <script src="sketch.js"></script>
+    <div id="black_overlay"></div>
+    <div class="supp_button">
+      <button class="supp_button_style" onclick="show_setting()">
+        <img src="images/button_setting.png" class="center_supp_image" />
+      </button>
+    </div>
+    <div class="supp_button" onclick="show_info()">
+      <button class="supp_button_style">
+        <img src="images/button_info.png" class="center_supp_image" />
+      </button>
+    </div>
+    <div class="supp_button">
+      <button class="supp_button_style" id="popup" onclick="show_form()">
+        <img src="images/button_help.png" class="center_supp_image" />
+      </button>
+    </div>
+
+    <div id="setting">
+      <span class="back" onclick="hide_setting()">&#x2715;</span>
+      <div class="popup_container">
+        <h2>Settings</h2>
+        <hr />
+        <input
+          type="range"
+          min="1"
+          max="60"
+          value="25"
+          class="slider"
+          id="myRange"
+        />
+        <p>Countdown: <span id="CDvalue"></span> seconds (5 to 60)</p>
+      </div>
+
+      <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("CDvalue");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+        };
+      </script>
+    </div>
+
+    <div id="infobox">
+      <div id="popupboxes">
+        <span class="back" onclick="hide_info()">&#x2715;</span>
+        <div class="popup_container">
+          <h2>Information</h2>
+          <hr />
+          <p class="infoDetail">
+            The “Guided Posture Exercises” application aims to guide the user
+            through exercises and corrects the user’s posture by using body
+            detection technologies. The app will display exercises on the screen
+            and check if it is performed correctly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="popupboxes">
+        <span class="back" onclick="hide_form()">&#x2715;</span>
+        <form
+          action="#"
+          id="form"
+          method="post"
+          name="form"
+          class="popup_container"
+        >
+          <h2>Contact Us</h2>
+          <hr />
+          <input id="name" name="name" placeholder="Name" type="text" />
+          <input
+            id="email"
+            name="email"
+            type="text"
+            value="poyeelau6-c@my.cityu.edu.hk"
+          />
+          <textarea id="msg" name="message" placeholder="Message"></textarea>
+          <a href="javascript:%20check_empty()" id="submit">Send</a>
+        </form>
+      </div>
+    </div>
+
+    <img src="images/postureB.png" class="center_image center" />
+    <p class="message">Let’s start working on your posture!</p>
+
+    <div class="center">
+      <a href="exercise.html">
+        <button class="Button_Colour">
+          <p class="Main_Button">Start</p>
+        </button>
+      </a>
+    </div>
   </body>
 </html>

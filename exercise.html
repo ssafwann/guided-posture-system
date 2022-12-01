@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <title>Guided Posture Exercise System</title>
+  </head>
+
+  <body>
+    <div id="black_overlay"></div>
+    <!-- container stores everything -->
+    <div id="container">
+      <!-- ! top bar -->
+      <div id="top-bar">
+        <button
+          id="top-bar-back-button"
+          onclick="window.location.href='index.html'"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-chevron-left"
+            width="36"
+            height="36"
+            viewbox="0 0 24 24"
+            stroke-width="2"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <polyline points="15 6 9 12 15 18" />
+          </svg>
+        </button>
+        <!-- <p id="top-bar-time">
+          Time left (0:<span id="top-bar-time--text">20</span>)
+        </p> -->
+        <p id="top-bar-time">0:<span id="top-bar-time--text">30</span></p>
+        <p id="top-bar-completed">
+          Completed: <span id="top-bar-completed--text">0</span>
+        </p>
+      </div>
+
+      <!-- ! middle section -->
+      <div id="middle">
+        <!-- ! left part that displays image -->
+        <div id="middle-left">
+          <img src="poses/rest.svg" alt="" id="middle-pose-image" />
+          <p>Follow the pose as displayed</p>
+        </div>
+        <!-- ! right part that displays video and timer -->
+        <div id="middle-right">
+          <p id="middle-right-timer">3</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ! completion menu -->
+    <div id="completion">
+      <div id="completion__container">
+        <p id="completion__message">
+          You completed <span id="completion__message--text">0</span> posture
+          exercises.
+        </p>
+        <div id="completion__buttons">
+          <button
+            id="completion__again"
+            onclick="location.href = 'exercise.html';"
+          >
+            Continue Exercising
+          </button>
+          <button id="completion__menu" onclick="location.href = 'index.html';">
+            Go back
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
